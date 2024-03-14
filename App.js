@@ -3,7 +3,12 @@ import { StyleSheet, Text, View } from "react-native";
 import Categories from "./screens/Categories";
 
 export default function App() {
-  return <Categories />;
+  return (
+    <>
+      <StatusBar style="dark" />
+      <Categories />
+    </>
+  );
 }
 
 const styles = StyleSheet.create({

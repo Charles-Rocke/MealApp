@@ -14,6 +14,8 @@ export default function App() {
       <StatusBar style="dark" />
       <NavigationContainer>
         <NavStack.Navigator>
+          {/* The first screen is dictated by order (1st) or using the initialRouteName prop */}
+          {/* <NavStack.Screen initialRouteName="ProductDetails" />  */}
           <NavStack.Screen name="Meals Categories" component={Categories} />
           <NavStack.Screen name="Meals Overview" component={MealsOverview} />
         </NavStack.Navigator>

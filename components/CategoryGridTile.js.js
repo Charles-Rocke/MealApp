@@ -10,12 +10,7 @@ function CategoryGridTile({ title, color }) {
           pressed ? styles.buttonPressed : null,
         ]}
       >
-        <View
-          style={[
-            styles.innerContainer,
-            { backgroundColor: "#FFFCF0", borderColor: color },
-          ]}
-        >
+        <View style={[styles.innerContainer, { backgroundColor: color }]}>
           <Text style={styles.title}>{title}</Text>
         </View>
       </Pressable>
@@ -31,7 +26,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     elevation: 4,
     backgroundColor: "white",
-    shadowColor: "black",
+    shadowColor: "#000033",
     shadowOpacity: 0.25,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
@@ -49,7 +44,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 8,
-    borderWidth: 2, // Set border width
   },
   title: {
     fontWeight: "bold",

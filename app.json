@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "backgroundColor": "#FFFCF0",
+    "backgroundColor": "#000033",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",

@@ -32,7 +32,16 @@ export default function App() {
               title: "All Categories",
             }}
           />
-          <NavStack.Screen name="MealsOverview" component={MealsOverview} />
+          <NavStack.Screen
+            name="MealsOverview"
+            component={MealsOverview}
+            // options={({ route, navigation }) => {
+            //   const categoryId = route.params.categoryId;
+            //   return {
+            //     title: categoryId,
+            //   };
+            // }} Alternative in MealsOverview.js useEffect
+          />
         </NavStack.Navigator>
       </NavigationContainer>
     </>

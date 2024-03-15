@@ -1,9 +1,10 @@
+import { useLayoutEffect } from "react";
 import { View, FlatList, StyleSheet, Text } from "react-native";
 // import { useRoute } from "@react-navigation/native"; alternative to what has been done
-import { MEALS } from "../data/dummyData";
+import { MEALS, CATEGORIES } from "../data/dummyData";
 import MealItem from "../components/MealItem";
 
-function MealsOverview({ route }) {
+function MealsOverview({ route, navigation }) {
   // const route = useRoute(); alternative to what is done below
   // route.params.categoryId; alternative to what is done below
   const categoryId = route.params.categoryId;
@@ -22,10 +23,23 @@ function MealsOverview({ route }) {
     };
     return (
       <View>
-        <MealItem {...mealItemProps}/>
+        <MealItem {...mealItemProps} />
       </View>
     );
   }
+
+  useLayoutEffect(
+    function updateCategoryHeaderTitle() {
+      const categoryTitle = CATEGORIES.find(
+        (category) => category.id === categoryId
+      ).title;
+
+      navigation.setOptions({
+        title: categoryTitle,
+      });
+    },
+    [categoryId, navigation]
+  );
 
   return (
     <View style={styles.container}>

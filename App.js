@@ -6,18 +6,33 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Categories from "./screens/Categories";
 import MealsOverview from "./screens/MealsOverview";
 
+/*
+The first screen is dictated by order (1st) or using the initialRouteName prop
+{/* <NavStack.Screen initialRouteName="ProductDetails" /> 
+*/
+
 const NavStack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       <NavigationContainer>
-        <NavStack.Navigator>
-          {/* The first screen is dictated by order (1st) or using the initialRouteName prop */}
-          {/* <NavStack.Screen initialRouteName="ProductDetails" />  */}
-          <NavStack.Screen name="Meals Categories" component={Categories} />
-          <NavStack.Screen name="Meals Overview" component={MealsOverview} />
+        <NavStack.Navigator
+          screenOptions={{
+            headerStyle: { backgroundColor: "#000033" },
+            headerTintColor: "white",
+            contentStyle: { backgroundColor: "#5959c7" },
+          }}
+        >
+          <NavStack.Screen
+            name="MealsCategories"
+            component={Categories}
+            options={{
+              title: "All Categories",
+            }}
+          />
+          <NavStack.Screen name="MealsOverview" component={MealsOverview} />
         </NavStack.Navigator>
       </NavigationContainer>
     </>

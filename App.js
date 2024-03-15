@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import Categories from "./screens/Categories";
 import MealsOverview from "./screens/MealsOverview";
-import MealDetails from "./screens/MealDetails";
+import MealDetailsScreen from "./screens/MealDetailsScreen";
 
 /*
 The first screen is dictated by order (1st) or using the initialRouteName prop
@@ -43,7 +43,7 @@ export default function App() {
             //   };
             // }} Alternative in MealsOverview.js useEffect
           />
-          <NavStack.Screen name="MealDetails" component={MealDetails} />
+          <NavStack.Screen name="MealDetails" component={MealDetailsScreen} />
         </NavStack.Navigator>
       </NavigationContainer>
     </>

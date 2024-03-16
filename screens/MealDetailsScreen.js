@@ -11,6 +11,7 @@ import { MEALS } from "../data/dummyData";
 import MealDetails from "../components/MealDetails";
 import Subtitle from "../components/Subtitle";
 import List from "../components/List";
+import IconButton from "../components/IconButton";
 
 function MealDetailsScreen({ route, navigation }) {
   const mealId = route.params.mealId;
@@ -23,7 +24,13 @@ function MealDetailsScreen({ route, navigation }) {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => {
-        return <Button title="Save" onPress={headerButtonPressHandler} />;
+        return (
+          <IconButton
+            icon="bookmark-o"
+            color="white"
+            onPress={headerButtonPressHandler}
+          />
+        );
       },
     });
   }, [navigation, headerButtonPressHandler]);

@@ -1,5 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
@@ -43,7 +43,15 @@ export default function App() {
             //   };
             // }} Alternative in MealsOverview.js useEffect
           />
-          <NavStack.Screen name="MealDetails" component={MealDetailsScreen} />
+          <NavStack.Screen
+            name="MealDetails"
+            component={MealDetailsScreen}
+            // options={{
+            //   headerRight: () => {
+            //     return <Button title="Save" />;
+            //   },
+            // }}
+          />
         </NavStack.Navigator>
       </NavigationContainer>
     </>

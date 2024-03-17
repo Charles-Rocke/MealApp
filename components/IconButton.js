@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet } from "react-native";
-import { FontAwesome } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 
 function IconButton({ icon, color, onPress }) {
   return (
@@ -12,7 +12,7 @@ function IconButton({ icon, color, onPress }) {
       ) : (
         <FontAwesome name="bookmark" size={24} color="white" />
       )} */}
-      <FontAwesome name={icon} size={24} color={color} />
+      <Ionicons name={icon} size={24} color={color} />
     </Pressable>
   );
 }
